@@ -1,0 +1,12 @@
+Average equiv: 20.0
+Average output: 4075.6
+Average run time: 2093.72 ms
+Average SigmaE: 20.0
+Average R: 193.78
+Average E: 0.0
+Variance equiv: 0.0
+Variance output: 4036.639999999999
+Variance run time: 6975.4416
+Variance SigmaE: 0.0
+Variance R: 10.091599999999998
+Variance E: 0.0

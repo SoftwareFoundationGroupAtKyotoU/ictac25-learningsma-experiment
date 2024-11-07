@@ -1,0 +1,7 @@
+Average equiv: 36.0
+Average output: 6516.0
+Average run time: 10949.3 
+Average R: 176.0
+Average SigmaE: 36.0
+Average E: 0.0
+Average cex: 4.00

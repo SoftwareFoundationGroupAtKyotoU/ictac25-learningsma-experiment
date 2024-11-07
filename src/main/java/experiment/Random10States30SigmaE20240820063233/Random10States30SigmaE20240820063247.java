@@ -1,0 +1,395 @@
+package experiment.Random10States30SigmaE20240820063233;
+import java.util.ArrayList;
+
+import java.util.Arrays;
+import java.util.List;
+import org.sat4j.specs.TimeoutException;
+import learning.symbolicmealy.SymbolicMealyAutomatonLearner;
+import learning.symbolicmealy.SymbolicMealyAutomatonOracle;
+import symbolicmealy.SMAInputMove;
+import symbolicmealy.SymbolicMealyAutomaton;
+import automata.sfa.SFAMove;
+import theory.BooleanAlgebra;
+import theory.ProductAlgebra;
+import theory.cartesian.CartesianProduct;
+import theory.intervals.BoundedIntegerSolver;
+import theory.intervals.IntegerSolver;
+import theory.intervals.IntPred;
+import utilities.Pair;
+public class Random10States30SigmaE20240820063247{
+public static void main(String[] args){
+try{
+BooleanAlgebra<IntPred, Integer> ba1 = new BoundedIntegerSolver(0, null);
+SymbolicMealyAutomatonLearner<IntPred, Integer, Character> learner = new SymbolicMealyAutomatonLearner<IntPred, Integer, Character>(true);
+Integer init = 1;
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.addAll(createTransitionsState1());
+trans.addAll(createTransitionsState2());
+trans.addAll(createTransitionsState3());
+trans.addAll(createTransitionsState4());
+trans.addAll(createTransitionsState5());
+trans.addAll(createTransitionsState6());
+trans.addAll(createTransitionsState7());
+trans.addAll(createTransitionsState8());
+trans.addAll(createTransitionsState9());
+trans.addAll(createTransitionsState10());
+SymbolicMealyAutomaton<IntPred, Integer, Character> example1 = SymbolicMealyAutomaton.MkSMA(trans,init,ba1);
+example1 = SymbolicMealyAutomaton.getNormalized(example1,ba1);
+example1 = SymbolicMealyAutomaton.getClean(example1,ba1);
+example1 = SymbolicMealyAutomaton.getMinimal(example1, ba1);
+SymbolicMealyAutomatonOracle<IntPred, Integer, Character> oracle = new SymbolicMealyAutomatonOracle<IntPred, Integer, Character>(example1,ba1);
+SymbolicMealyAutomaton<IntPred, Integer, Character> learned = learner.learn(oracle, ba1);
+} catch (TimeoutException e) {
+}
+}
+private static List<SFAMove<IntPred, Integer>> createTransitionsState1() {
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 10, new IntPred(0, 27), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 7, new IntPred(28, 49), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 8, new IntPred(50, 63), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 7, new IntPred(64, 134), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 6, new IntPred(135, 182), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 6, new IntPred(183, 273), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 3, new IntPred(274, 326), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 3, new IntPred(327, 399), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 6, new IntPred(400, 445), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 8, new IntPred(446, 483), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 7, new IntPred(484, 571), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 9, new IntPred(572, 604), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 1, new IntPred(605, 664), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 4, new IntPred(665, 719), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 3, new IntPred(720, 753), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 6, new IntPred(754, 795), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 6, new IntPred(796, 874), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 8, new IntPred(875, 880), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 9, new IntPred(881, 893), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 9, new IntPred(894, 979), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 9, new IntPred(980, 1030), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 2, new IntPred(1031, 1031), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 2, new IntPred(1032, 1058), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 2, new IntPred(1059, 1125), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 6, new IntPred(1126, 1149), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 5, new IntPred(1150, 1209), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 10, new IntPred(1210, 1226), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 9, new IntPred(1227, 1276), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 1, new IntPred(1277, 1342), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(1, 3, new IntPred(1343, null), 'b'));
+return trans;
+}
+
+private static List<SFAMove<IntPred, Integer>> createTransitionsState2() {
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 10, new IntPred(0, 27), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 10, new IntPred(28, 49), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 9, new IntPred(50, 63), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 4, new IntPred(64, 134), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 9, new IntPred(135, 182), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 7, new IntPred(183, 273), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 2, new IntPred(274, 326), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 3, new IntPred(327, 399), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 7, new IntPred(400, 445), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 6, new IntPred(446, 483), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 8, new IntPred(484, 571), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 8, new IntPred(572, 604), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 1, new IntPred(605, 664), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 5, new IntPred(665, 719), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 8, new IntPred(720, 753), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 4, new IntPred(754, 795), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 2, new IntPred(796, 874), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 6, new IntPred(875, 880), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 10, new IntPred(881, 893), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 2, new IntPred(894, 979), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 7, new IntPred(980, 1030), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 4, new IntPred(1031, 1031), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 1, new IntPred(1032, 1058), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 9, new IntPred(1059, 1125), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 7, new IntPred(1126, 1149), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 8, new IntPred(1150, 1209), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 1, new IntPred(1210, 1226), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 7, new IntPred(1227, 1276), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 4, new IntPred(1277, 1342), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(2, 9, new IntPred(1343, null), 'a'));
+return trans;
+}
+
+private static List<SFAMove<IntPred, Integer>> createTransitionsState3() {
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 9, new IntPred(0, 27), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 5, new IntPred(28, 49), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 9, new IntPred(50, 63), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 9, new IntPred(64, 134), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 8, new IntPred(135, 182), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 6, new IntPred(183, 273), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 1, new IntPred(274, 326), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 7, new IntPred(327, 399), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 1, new IntPred(400, 445), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 8, new IntPred(446, 483), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 4, new IntPred(484, 571), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 3, new IntPred(572, 604), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 1, new IntPred(605, 664), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 9, new IntPred(665, 719), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 9, new IntPred(720, 753), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 9, new IntPred(754, 795), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 7, new IntPred(796, 874), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 2, new IntPred(875, 880), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 10, new IntPred(881, 893), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 2, new IntPred(894, 979), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 6, new IntPred(980, 1030), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 7, new IntPred(1031, 1031), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 9, new IntPred(1032, 1058), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 8, new IntPred(1059, 1125), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 3, new IntPred(1126, 1149), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 8, new IntPred(1150, 1209), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 10, new IntPred(1210, 1226), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 5, new IntPred(1227, 1276), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 1, new IntPred(1277, 1342), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(3, 8, new IntPred(1343, null), 'b'));
+return trans;
+}
+
+private static List<SFAMove<IntPred, Integer>> createTransitionsState4() {
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 10, new IntPred(0, 27), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 8, new IntPred(28, 49), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 3, new IntPred(50, 63), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 5, new IntPred(64, 134), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 8, new IntPred(135, 182), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 6, new IntPred(183, 273), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 7, new IntPred(274, 326), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 6, new IntPred(327, 399), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 6, new IntPred(400, 445), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 5, new IntPred(446, 483), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 4, new IntPred(484, 571), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 10, new IntPred(572, 604), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 10, new IntPred(605, 664), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 5, new IntPred(665, 719), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 6, new IntPred(720, 753), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 9, new IntPred(754, 795), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 2, new IntPred(796, 874), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 9, new IntPred(875, 880), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 5, new IntPred(881, 893), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 1, new IntPred(894, 979), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 7, new IntPred(980, 1030), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 6, new IntPred(1031, 1031), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 1, new IntPred(1032, 1058), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 5, new IntPred(1059, 1125), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 4, new IntPred(1126, 1149), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 8, new IntPred(1150, 1209), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 1, new IntPred(1210, 1226), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 2, new IntPred(1227, 1276), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 8, new IntPred(1277, 1342), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(4, 4, new IntPred(1343, null), 'a'));
+return trans;
+}
+
+private static List<SFAMove<IntPred, Integer>> createTransitionsState5() {
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 2, new IntPred(0, 27), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 6, new IntPred(28, 49), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 5, new IntPred(50, 63), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 4, new IntPred(64, 134), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 7, new IntPred(135, 182), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 4, new IntPred(183, 273), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 8, new IntPred(274, 326), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 1, new IntPred(327, 399), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 6, new IntPred(400, 445), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 1, new IntPred(446, 483), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 3, new IntPred(484, 571), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 10, new IntPred(572, 604), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 2, new IntPred(605, 664), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 4, new IntPred(665, 719), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 4, new IntPred(720, 753), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 7, new IntPred(754, 795), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 2, new IntPred(796, 874), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 2, new IntPred(875, 880), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 5, new IntPred(881, 893), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 5, new IntPred(894, 979), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 6, new IntPred(980, 1030), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 4, new IntPred(1031, 1031), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 4, new IntPred(1032, 1058), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 5, new IntPred(1059, 1125), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 7, new IntPred(1126, 1149), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 3, new IntPred(1150, 1209), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 6, new IntPred(1210, 1226), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 4, new IntPred(1227, 1276), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 2, new IntPred(1277, 1342), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(5, 8, new IntPred(1343, null), 'a'));
+return trans;
+}
+
+private static List<SFAMove<IntPred, Integer>> createTransitionsState6() {
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 4, new IntPred(0, 27), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 7, new IntPred(28, 49), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 9, new IntPred(50, 63), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 10, new IntPred(64, 134), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 1, new IntPred(135, 182), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 8, new IntPred(183, 273), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 10, new IntPred(274, 326), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 9, new IntPred(327, 399), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 6, new IntPred(400, 445), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 9, new IntPred(446, 483), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 2, new IntPred(484, 571), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 3, new IntPred(572, 604), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 3, new IntPred(605, 664), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 6, new IntPred(665, 719), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 6, new IntPred(720, 753), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 10, new IntPred(754, 795), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 4, new IntPred(796, 874), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 1, new IntPred(875, 880), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 7, new IntPred(881, 893), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 10, new IntPred(894, 979), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 1, new IntPred(980, 1030), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 10, new IntPred(1031, 1031), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 7, new IntPred(1032, 1058), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 5, new IntPred(1059, 1125), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 4, new IntPred(1126, 1149), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 2, new IntPred(1150, 1209), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 3, new IntPred(1210, 1226), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 5, new IntPred(1227, 1276), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 8, new IntPred(1277, 1342), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(6, 10, new IntPred(1343, null), 'b'));
+return trans;
+}
+
+private static List<SFAMove<IntPred, Integer>> createTransitionsState7() {
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 2, new IntPred(0, 27), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 8, new IntPred(28, 49), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 3, new IntPred(50, 63), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 3, new IntPred(64, 134), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 5, new IntPred(135, 182), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 2, new IntPred(183, 273), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 3, new IntPred(274, 326), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 4, new IntPred(327, 399), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 7, new IntPred(400, 445), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 1, new IntPred(446, 483), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 10, new IntPred(484, 571), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 4, new IntPred(572, 604), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 10, new IntPred(605, 664), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 7, new IntPred(665, 719), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 8, new IntPred(720, 753), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 2, new IntPred(754, 795), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 6, new IntPred(796, 874), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 10, new IntPred(875, 880), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 2, new IntPred(881, 893), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 2, new IntPred(894, 979), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 8, new IntPred(980, 1030), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 7, new IntPred(1031, 1031), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 4, new IntPred(1032, 1058), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 8, new IntPred(1059, 1125), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 7, new IntPred(1126, 1149), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 7, new IntPred(1150, 1209), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 9, new IntPred(1210, 1226), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 5, new IntPred(1227, 1276), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 2, new IntPred(1277, 1342), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(7, 3, new IntPred(1343, null), 'b'));
+return trans;
+}
+
+private static List<SFAMove<IntPred, Integer>> createTransitionsState8() {
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 7, new IntPred(0, 27), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 1, new IntPred(28, 49), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 7, new IntPred(50, 63), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 9, new IntPred(64, 134), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 1, new IntPred(135, 182), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 1, new IntPred(183, 273), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 4, new IntPred(274, 326), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 4, new IntPred(327, 399), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 6, new IntPred(400, 445), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 10, new IntPred(446, 483), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 10, new IntPred(484, 571), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 3, new IntPred(572, 604), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 5, new IntPred(605, 664), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 10, new IntPred(665, 719), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 4, new IntPred(720, 753), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 6, new IntPred(754, 795), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 5, new IntPred(796, 874), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 10, new IntPred(875, 880), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 7, new IntPred(881, 893), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 7, new IntPred(894, 979), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 10, new IntPred(980, 1030), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 9, new IntPred(1031, 1031), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 4, new IntPred(1032, 1058), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 1, new IntPred(1059, 1125), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 5, new IntPred(1126, 1149), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 3, new IntPred(1150, 1209), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 5, new IntPred(1210, 1226), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 1, new IntPred(1227, 1276), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 6, new IntPred(1277, 1342), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(8, 1, new IntPred(1343, null), 'b'));
+return trans;
+}
+
+private static List<SFAMove<IntPred, Integer>> createTransitionsState9() {
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 7, new IntPred(0, 27), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 6, new IntPred(28, 49), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 4, new IntPred(50, 63), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 9, new IntPred(64, 134), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 8, new IntPred(135, 182), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 6, new IntPred(183, 273), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 9, new IntPred(274, 326), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 1, new IntPred(327, 399), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 5, new IntPred(400, 445), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 7, new IntPred(446, 483), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 8, new IntPred(484, 571), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 5, new IntPred(572, 604), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 6, new IntPred(605, 664), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 1, new IntPred(665, 719), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 4, new IntPred(720, 753), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 5, new IntPred(754, 795), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 3, new IntPred(796, 874), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 3, new IntPred(875, 880), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 9, new IntPred(881, 893), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 10, new IntPred(894, 979), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 10, new IntPred(980, 1030), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 5, new IntPred(1031, 1031), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 10, new IntPred(1032, 1058), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 7, new IntPred(1059, 1125), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 6, new IntPred(1126, 1149), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 8, new IntPred(1150, 1209), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 1, new IntPred(1210, 1226), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 8, new IntPred(1227, 1276), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 2, new IntPred(1277, 1342), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(9, 7, new IntPred(1343, null), 'b'));
+return trans;
+}
+
+private static List<SFAMove<IntPred, Integer>> createTransitionsState10() {
+List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 3, new IntPred(0, 27), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 1, new IntPred(28, 49), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 3, new IntPred(50, 63), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 7, new IntPred(64, 134), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 2, new IntPred(135, 182), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 10, new IntPred(183, 273), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 9, new IntPred(274, 326), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 10, new IntPred(327, 399), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 2, new IntPred(400, 445), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 2, new IntPred(446, 483), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 7, new IntPred(484, 571), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 5, new IntPred(572, 604), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 4, new IntPred(605, 664), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 6, new IntPred(665, 719), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 2, new IntPred(720, 753), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 3, new IntPred(754, 795), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 7, new IntPred(796, 874), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 10, new IntPred(875, 880), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 8, new IntPred(881, 893), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 4, new IntPred(894, 979), 'c'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 5, new IntPred(980, 1030), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 5, new IntPred(1031, 1031), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 1, new IntPred(1032, 1058), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 8, new IntPred(1059, 1125), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 6, new IntPred(1126, 1149), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 8, new IntPred(1150, 1209), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 7, new IntPred(1210, 1226), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 4, new IntPred(1227, 1276), 'b'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 2, new IntPred(1277, 1342), 'a'));
+trans.add(new SMAInputMove<IntPred, Integer, Character>(10, 8, new IntPred(1343, null), 'c'));
+return trans;
+}
+
+}
