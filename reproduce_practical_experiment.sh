@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Number of times to execute the Java file
-num_executions=10
+num_executions=1
 
 # Get Java files in the practical directory
 java_files=$(find ./src/main/java/experiment/practical -name "*.java")
