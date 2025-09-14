@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
 
-This repository contains the implementation and experimental setup for evaluating the Learning Symbolic Mealy Automata (LearningSMA) algorithm. The experiments include both practical case studies with real-world models and random experiments with varying parameters.
+This repository contains the implementation and experimental setup for evaluating the Learning Symbolic Mealy Automata (LearningSMA) algorithm (https://github.com/SoftwareFoundationGroupAtKyotoU/learningsma). The experiments include both practical case studies with real-world models and random experiments with varying parameters.
 
 ## Prerequisites
 
