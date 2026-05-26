@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export MAVEN_OPTS="${MAVEN_OPTS:+$MAVEN_OPTS }-Xmx64g"
+
 # Specify the number of states
 numberOfStates=(10 20 40 80)
 # Specify the number of Sigma_E
@@ -31,7 +33,7 @@ for states in "${numberOfStates[@]}"; do
   mkdir -p ./src/main/java/experiment/"$dirExperiment"/"$className"
   for ((i = 1; i <= numberOfIterations; i++)) do
     timestamp=$(date +"%Y%m%d%H%M%S")
-    mvn exec:java -Dexec.mainClass=experiment."$dirExperiment"."$className" > ./src/main/java/experiment/"$dirExperiment"/"$className"/"$className"-"$timestamp".log
+    mvn -q exec:java -Dexec.mainClass=experiment."$dirExperiment"."$className" > ./src/main/java/experiment/"$dirExperiment"/"$className"/"$className"-"$timestamp".log
   done
   done
   done

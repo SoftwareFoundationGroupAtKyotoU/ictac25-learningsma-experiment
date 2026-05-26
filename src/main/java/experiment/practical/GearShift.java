@@ -1,11 +1,13 @@
 package experiment.practical;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.sat4j.specs.TimeoutException;
 
+import experiment.BenchmarkLog;
 import learning.symbolicmealy.SymbolicMealyAutomatonLearner;
 import learning.symbolicmealy.SymbolicMealyAutomatonOracle;
 import symbolicmealy.SMAInputMove;
@@ -22,16 +24,18 @@ import theory.intervals.RealPred;
 import utilities.Pair;
 
 public class GearShift {
+  private static final long START_NANOS = System.nanoTime();
+
   private static BooleanAlgebra<RealPred, Double> throttleBA = new BoundedDoubleSolver(0.0, 100.0);
-  private static BooleanAlgebra<RealPred, Double> speedBA = new BoundedDoubleSolver(0.0, 1000000.0);
+  private static BooleanAlgebra<RealPred, Double> speedBA = new BoundedDoubleSolver(0.0, null);
   private static ProductAlgebra<RealPred, Double, RealPred, Double> prodBA = new ProductAlgebra<>(throttleBA, speedBA);
   private static Double[][] interpUp = {
-      { 0.0, 10.0, 30.0, 50.0, 1000000.0 },
-      { 25.0, 10.0, 30.0, 50.0, 1000000.0 },
-      { 35.0, 15.0, 30.0, 50.0, 1000000.0 },
-      { 50.0, 23.0, 41.0, 60.0, 1000000.0 },
-      { 90.0, 40.0, 70.0, 100.0, 1000000.0 },
-      { 100.0, 40.0, 70.0, 100.0, 1000000.0 }
+      { 0.0, 10.0, 30.0, 50.0 },
+      { 25.0, 10.0, 30.0, 50.0 },
+      { 35.0, 15.0, 30.0, 50.0 },
+      { 50.0, 23.0, 41.0, 60.0 },
+      { 90.0, 40.0, 70.0, 100.0 },
+      { 100.0, 40.0, 70.0, 100.0 }
   };
   private static Double[][] interpDown = {
       { 0.0, 0.0, 5.0, 20.0, 35.0 },
@@ -41,20 +45,115 @@ public class GearShift {
       { 90.0, 0.0, 30.0, 50.0, 80.0 },
       { 100.0, 0.0, 30.0, 50.0, 80.0 }
   };
+
+  // ---- property-gated defaults ----
+
+  private static boolean diagnosticsEnabled() {
+    return "true".equalsIgnoreCase(System.getProperty("sma.diag", "false"));
+  }
+
+  private static synchronized void diag(String category, String message) {
+    if (!diagnosticsEnabled()) return;
+    System.out.println("[SMA_DIAG][" + category + "] elapsed_ms=" + elapsedMillis() + " " + message);
+  }
+
+  private static long elapsedMillis() {
+    return (System.nanoTime() - START_NANOS) / 1000000L;
+  }
+
+  private static long elapsedMillisSince(long startNanos) {
+    return (System.nanoTime() - startNanos) / 1000000L;
+  }
+
+  // ---- main ----
+
   public static void main(String[] args) {
+    boolean smokeMode = args.length > 0 && "--smoke".equals(args[0]);
     try {
+      if (smokeMode) {
+        smokeTest();
+        return;
+      }
+
+      boolean learnerDebug = BenchmarkLog.learnerDebugEnabled();
+      boolean captureTableStats = BenchmarkLog.captureTableStatsEnabled();
+      boolean effectiveLearnerDebug = learnerDebug || captureTableStats;
+
+      diag("PHASE", "target-construct-start");
       SymbolicMealyAutomaton<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String> gearShift = getGearShiftAutomaton();
-      gearShift.createDotFile("gearShift", "./");
-      SymbolicMealyAutomatonOracle<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String> oracle = new SymbolicMealyAutomatonOracle<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String>(
-          gearShift, prodBA);
-      SymbolicMealyAutomatonLearner<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String> learner = new SymbolicMealyAutomatonLearner<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String>(
-          true);
-    SymbolicMealyAutomaton<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String> learned = learner.learn(oracle, prodBA);
-          learned.createDotFile("learnedGearShift", "./");
+      diag("PHASE", "target-construct-done states=" + gearShift.stateCount() + " transitions=" + gearShift.transitionCount());
+
+      diag("PHASE", "target-dot-start file=gearShift.dot");
+      boolean dotCreated = gearShift.createDotFile("gearShift", "./");
+      diag("PHASE", "target-dot-done success=" + dotCreated);
+
+      SymbolicMealyAutomatonOracle<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String> oracle =
+          new SymbolicMealyAutomatonOracle<>(gearShift, prodBA);
+      oracle = BenchmarkLog.wrap(oracle);
+
+      diag("PHASE", "learner-create-start effective=" + effectiveLearnerDebug);
+      SymbolicMealyAutomatonLearner<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String> learner =
+          new SymbolicMealyAutomatonLearner<>(effectiveLearnerDebug);
+      diag("PHASE", "learner-create-done");
+
+      diag("PHASE", "learner-start");
+      long learnStart = System.nanoTime();
+      PrintStream origOut = System.out;
+      BenchmarkLog.LearnerDebugPrintStream learnerOut =
+          captureTableStats ? new BenchmarkLog.LearnerDebugPrintStream(origOut, learnerDebug) : null;
+      SymbolicMealyAutomaton<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String> learned;
+      try {
+        if (learnerOut != null) System.setOut(learnerOut);
+        learned = learner.learn(oracle, prodBA);
+      } finally {
+        if (learnerOut != null) { learnerOut.flush(); System.setOut(origOut); }
+      }
+      diag("PHASE", "learner-done duration_ms=" + elapsedMillisSince(learnStart)
+          + " states=" + learned.stateCount() + " transitions=" + learned.transitionCount());
+      BenchmarkLog.printSummary(oracle, learnerOut);
+
+      diag("PHASE", "learned-dot-start file=learnedGearShift.dot");
+      boolean learnedDotCreated = learned.createDotFile("learnedGearShift", "./");
+      diag("PHASE", "learned-dot-done success=" + learnedDotCreated);
     } catch (TimeoutException e) {
+      if (!smokeMode) diag("ERROR", "timeout_exception message=" + safeMessage(e));
       e.printStackTrace();
+    } finally {
+      if (!smokeMode) diag("PHASE", "run-finished");
     }
   }
+
+  private static String safeMessage(Throwable t) {
+    String msg = t.getMessage();
+    return msg == null ? t.getClass().getName() : msg.replace('\n', ' ').replace('\r', ' ');
+  }
+
+  // ---- smoke test ----
+
+  private static void smokeTest() throws TimeoutException {
+    SymbolicMealyAutomaton<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String> gs = getGearShiftAutomaton();
+    gs.createDotFile("gearShift", "./");
+
+    List<Pair<Double, Double>> inputs = Arrays.asList(
+        input(50.0, 5.0),
+        input(50.0, 25.0),
+        input(50.0, 25.0),
+        input(50.0, 25.0));
+    List<String> expected = Arrays.asList("gear1", "gear1", "gear1", "gear2");
+
+    List<String> actual = gs.outputSeq(inputs, prodBA);
+    if (!expected.equals(actual)) {
+      throw new IllegalStateException("Unexpected smoke-test outputs: " + actual);
+    }
+
+    System.out.println("GearShift smoke test passed: " + gs.stateCount() + " states, " + gs.transitionCount() + " transitions");
+  }
+
+  private static Pair<Double, Double> input(double throttle, double speed) {
+    return new Pair<>(throttle, speed);
+  }
+
+  // ---- getGearShiftAutomaton() ----
 
   private static SymbolicMealyAutomaton<CartesianProduct<RealPred, RealPred>, Pair<Double, Double>, String> getGearShiftAutomaton() throws TimeoutException {
 

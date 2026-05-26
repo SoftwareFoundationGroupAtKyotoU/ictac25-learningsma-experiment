@@ -1,0 +1,47 @@
+{
+  "title": "Artifact for Active Learning of Symbolic Mealy Automata",
+  "upload_type": "software",
+  "description": "<p>This artifact contains the implementation, experiment scripts, benchmark models, and analysis materials for the experiments in the journal version of <em>Active Learning of Symbolic Mealy Automata</em>.</p>",
+  "creators": [
+    {
+      "name": "Irie, Kengo",
+      "affiliation": "Kyoto University"
+    },
+    {
+      "name": "Waga, Masaki",
+      "affiliation": "Kyoto University; National Institute of Informatics"
+    },
+    {
+      "name": "Suenaga, Kohei",
+      "affiliation": "Kyoto University"
+    }
+  ],
+  "version": "1.0.0",
+  "access_right": "open",
+  "license": "apache-2.0",
+  "language": "eng",
+  "keywords": [
+    "automata learning",
+    "symbolic automata",
+    "Mealy automata",
+    "artifact evaluation",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.1007/978-3-032-11176-0_19",
+      "relation": "references",
+      "resource_type": "publication-conferencepaper"
+    },
+    {
+      "identifier": "https://github.com/SoftwareFoundationGroupAtKyotoU/learningsma",
+      "relation": "requires",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/lorisdanto/symbolicautomata",
+      "relation": "requires",
+      "resource_type": "software"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 package experiment.Random40States20SigmaE20240822005032;
+import experiment.BenchmarkLog;
 import java.util.ArrayList;
 
 import java.util.Arrays;
@@ -20,7 +21,10 @@ public class Random40States20SigmaE20240822005043{
 public static void main(String[] args){
 try{
 BooleanAlgebra<IntPred, Integer> ba1 = new BoundedIntegerSolver(0, null);
-SymbolicMealyAutomatonLearner<IntPred, Integer, Character> learner = new SymbolicMealyAutomatonLearner<IntPred, Integer, Character>(true);
+boolean learnerDebug = BenchmarkLog.learnerDebugEnabled();
+boolean captureTableStats = BenchmarkLog.captureTableStatsEnabled();
+boolean effectiveLearnerDebug = learnerDebug || captureTableStats;
+SymbolicMealyAutomatonLearner<IntPred, Integer, Character> learner = new SymbolicMealyAutomatonLearner<IntPred, Integer, Character>(effectiveLearnerDebug);
 Integer init = 1;
 List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();
 trans.addAll(createTransitionsState1());
@@ -67,8 +71,23 @@ SymbolicMealyAutomaton<IntPred, Integer, Character> example1 = SymbolicMealyAuto
 example1 = SymbolicMealyAutomaton.getNormalized(example1,ba1);
 example1 = SymbolicMealyAutomaton.getClean(example1,ba1);
 example1 = SymbolicMealyAutomaton.getMinimal(example1, ba1);
-SymbolicMealyAutomatonOracle<IntPred, Integer, Character> oracle = new SymbolicMealyAutomatonOracle<IntPred, Integer, Character>(example1,ba1);
-SymbolicMealyAutomaton<IntPred, Integer, Character> learned = learner.learn(oracle, ba1);
+SymbolicMealyAutomatonOracle<IntPred, Integer, Character> oracle = BenchmarkLog.wrap(
+            new SymbolicMealyAutomatonOracle<IntPred, Integer, Character>(example1,ba1));
+java.io.PrintStream originalOut = System.out;
+BenchmarkLog.LearnerDebugPrintStream learnerOut = captureTableStats ? new BenchmarkLog.LearnerDebugPrintStream(originalOut, learnerDebug) : null;
+SymbolicMealyAutomaton<IntPred, Integer, Character> learned;
+try {
+if (learnerOut != null) {
+System.setOut(learnerOut);
+}
+learned = learner.learn(oracle, ba1);
+} finally {
+if (learnerOut != null) {
+learnerOut.flush();
+System.setOut(originalOut);
+}
+}
+BenchmarkLog.printSummary(oracle, learnerOut);
 } catch (TimeoutException e) {
 }
 }

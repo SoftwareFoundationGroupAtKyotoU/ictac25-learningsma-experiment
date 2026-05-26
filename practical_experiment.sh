@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export MAVEN_OPTS="${MAVEN_OPTS:+$MAVEN_OPTS }-Xmx64g"
+
 # Number of times to execute the Java file
 num_executions=10
 
@@ -30,6 +32,6 @@ for file in $java_files; do
     log_file="${parent_dir}/${dir_name}/${filename}_${datetime}.log"
 
     # Execute the Java file and save the result to the log file
-    mvn exec:java -Dexec.mainClass="experiment.practical.${filename}" > $log_file
+    mvn -q exec:java -Dexec.mainClass="experiment.practical.${filename}" > $log_file
   done
 done

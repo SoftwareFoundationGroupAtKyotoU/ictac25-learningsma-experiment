@@ -1,0 +1,113 @@
+{
+  "FoxBMSPrechargeController": {
+    "run_time": {
+      "mean": 24177.9,
+      "variance": 14391932.322222,
+      "count": 10
+    },
+    "equiv": {
+      "mean": 37.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "output": {
+      "mean": 21099.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "R": {
+      "mean": 526.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "E": {
+      "mean": 3.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "SigmaE": {
+      "mean": 36.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "m": {
+      "mean": 9.0,
+      "variance": 0.0,
+      "count": 10
+    }
+  },
+  "GearShift": {
+    "run_time": {
+      "mean": 695554.3,
+      "variance": 2047785208.011111,
+      "count": 10
+    },
+    "equiv": {
+      "mean": 66.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "output": {
+      "mean": 86224.8,
+      "variance": 15576.177778,
+      "count": 10
+    },
+    "R": {
+      "mean": 1149.2,
+      "variance": 2.844444,
+      "count": 10
+    },
+    "E": {
+      "mean": 6.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "SigmaE": {
+      "mean": 68.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "m": {
+      "mean": 12.0,
+      "variance": 0.0,
+      "count": 10
+    }
+  },
+  "MarsHelicopter": {
+    "run_time": {
+      "mean": 3447.9,
+      "variance": 56836.988889,
+      "count": 10
+    },
+    "equiv": {
+      "mean": 36.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "output": {
+      "mean": 6526.8,
+      "variance": 1166.4,
+      "count": 10
+    },
+    "R": {
+      "mean": 176.3,
+      "variance": 0.9,
+      "count": 10
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "SigmaE": {
+      "mean": 36.0,
+      "variance": 0.0,
+      "count": 10
+    },
+    "m": {
+      "mean": 4.0,
+      "variance": 0.0,
+      "count": 10
+    }
+  }
+}

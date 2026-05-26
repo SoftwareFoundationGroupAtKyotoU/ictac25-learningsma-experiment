@@ -31,6 +31,7 @@ public class RandomGenerator {
       pw.println("import java.util.ArrayList;" + "\n"
           + "\n" + "import java.util.Arrays;"
           + "\n" + "import java.util.List;"
+          + "\n" + "import experiment.BenchmarkLog;"
           + "\n" + "import org.sat4j.specs.TimeoutException;"
           + "\n" + "import learning.symbolicmealy.SymbolicMealyAutomatonLearner;"
           + "\n" + "import learning.symbolicmealy.SymbolicMealyAutomatonOracle;"
@@ -48,8 +49,11 @@ public class RandomGenerator {
       pw.println("public static void main(String[] args){");
       pw.println("try{");
       pw.println("BooleanAlgebra<IntPred, Integer> ba1 = new BoundedIntegerSolver(0, null);");
+      pw.println("boolean learnerDebug = BenchmarkLog.learnerDebugEnabled();");
+      pw.println("boolean captureTableStats = BenchmarkLog.captureTableStatsEnabled();");
+      pw.println("boolean effectiveLearnerDebug = learnerDebug || captureTableStats;");
       pw.println(
-          "SymbolicMealyAutomatonLearner<IntPred, Integer, Character> learner = new SymbolicMealyAutomatonLearner<IntPred, Integer, Character>(true);");
+          "SymbolicMealyAutomatonLearner<IntPred, Integer, Character> learner = new SymbolicMealyAutomatonLearner<IntPred, Integer, Character>(effectiveLearnerDebug);");
       pw.println("Integer init = 1;");
       pw.println("List<SFAMove<IntPred, Integer>> trans = new ArrayList<SFAMove<IntPred, Integer>>();");
       for (int i = 1; i <= numberOfStates; i++) {
@@ -66,7 +70,21 @@ public class RandomGenerator {
               pw.println("example1 = SymbolicMealyAutomaton.getMinimal(example1, ba1);");
       pw.println(
           "SymbolicMealyAutomatonOracle<IntPred, Integer, Character> oracle = new SymbolicMealyAutomatonOracle<IntPred, Integer, Character>(example1,ba1);");
-      pw.println("SymbolicMealyAutomaton<IntPred, Integer, Character> learned = learner.learn(oracle, ba1);");
+      pw.println("java.io.PrintStream originalOut = System.out;");
+      pw.println("BenchmarkLog.LearnerDebugPrintStream learnerOut = captureTableStats ? new BenchmarkLog.LearnerDebugPrintStream(originalOut, learnerDebug) : null;");
+      pw.println("SymbolicMealyAutomaton<IntPred, Integer, Character> learned;");
+      pw.println("try {");
+      pw.println("if (learnerOut != null) {");
+      pw.println("System.setOut(learnerOut);");
+      pw.println("}");
+      pw.println("learned = learner.learn(oracle, ba1);");
+      pw.println("} finally {");
+      pw.println("if (learnerOut != null) {");
+      pw.println("learnerOut.flush();");
+      pw.println("System.setOut(originalOut);");
+      pw.println("}");
+      pw.println("}");
+      pw.println("BenchmarkLog.printSummary(oracle, learnerOut);");
       pw.println("} catch (TimeoutException e) {");
       pw.println("}");
       pw.println("}");

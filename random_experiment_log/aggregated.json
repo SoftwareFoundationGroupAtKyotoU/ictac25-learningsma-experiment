@@ -1,0 +1,802 @@
+{
+  "Random10States10SigmaE": {
+    "n": 10,
+    "SigmaE_param": 10,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 137.62,
+      "variance": 1584.64202,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 10.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 1019.7,
+      "variance": 249.40404,
+      "count": 100
+    },
+    "R": {
+      "mean": 91.97,
+      "variance": 2.49404,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 10.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random10States20SigmaE": {
+    "n": 10,
+    "SigmaE_param": 20,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 1029.48,
+      "variance": 82484.595556,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 20.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 4044.8,
+      "variance": 615.111111,
+      "count": 100
+    },
+    "R": {
+      "mean": 192.24,
+      "variance": 1.537778,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 20.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random10States30SigmaE": {
+    "n": 10,
+    "SigmaE_param": 30,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 4350.19,
+      "variance": 1020825.327172,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 30.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 9093.6,
+      "variance": 3877.818182,
+      "count": 100
+    },
+    "R": {
+      "mean": 293.12,
+      "variance": 4.308687,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 30.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random10States40SigmaE": {
+    "n": 10,
+    "SigmaE_param": 40,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 9007.19,
+      "variance": 3128331.448384,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 40.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 16104.4,
+      "variance": 4845.090909,
+      "count": 100
+    },
+    "R": {
+      "mean": 392.61,
+      "variance": 3.028182,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 40.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random120States10SigmaE": {
+    "n": 120,
+    "SigmaE_param": 10,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 9287.11,
+      "variance": 1941559.10899,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 10.1,
+      "variance": 0.090909,
+      "count": 100
+    },
+    "output": {
+      "mean": 12138.89,
+      "variance": 136873.432222,
+      "count": 100
+    },
+    "R": {
+      "mean": 1081.85,
+      "variance": 1.260101,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.1,
+      "variance": 0.090909,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 10.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.19,
+      "variance": 0.377677,
+      "count": 100
+    }
+  },
+  "Random120States20SigmaE": {
+    "n": 120,
+    "SigmaE_param": 20,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 77948.77,
+      "variance": 106450792.441515,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 20.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 48036.8,
+      "variance": 426.020202,
+      "count": 100
+    },
+    "R": {
+      "mean": 2281.84,
+      "variance": 1.065051,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 20.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 1.91,
+      "variance": 0.082727,
+      "count": 100
+    }
+  },
+  "Random120States30SigmaE": {
+    "n": 120,
+    "SigmaE_param": 30,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 402196.02,
+      "variance": 2580413286.080403,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 30.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 108065.7,
+      "variance": 2703.545455,
+      "count": 100
+    },
+    "R": {
+      "mean": 3482.19,
+      "variance": 3.003939,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 30.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random120States40SigmaE": {
+    "n": 120,
+    "SigmaE_param": 40,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 1445732.35,
+      "variance": 41438040878.51262,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 40.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 192119.2,
+      "variance": 17647.838384,
+      "count": 100
+    },
+    "R": {
+      "mean": 4682.98,
+      "variance": 11.029899,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 40.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random20States10SigmaE": {
+    "n": 20,
+    "SigmaE_param": 10,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 256.97,
+      "variance": 2376.049596,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 10.1,
+      "variance": 0.090909,
+      "count": 100
+    },
+    "output": {
+      "mean": 2038.05,
+      "variance": 4096.492424,
+      "count": 100
+    },
+    "R": {
+      "mean": 181.78,
+      "variance": 0.718788,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.1,
+      "variance": 0.090909,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 10.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.1,
+      "variance": 0.494949,
+      "count": 100
+    }
+  },
+  "Random20States20SigmaE": {
+    "n": 20,
+    "SigmaE_param": 20,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 2473.78,
+      "variance": 46546.577374,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 20.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 8047.0,
+      "variance": 609.090909,
+      "count": 100
+    },
+    "R": {
+      "mean": 382.35,
+      "variance": 1.522727,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 20.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 1.99,
+      "variance": 0.01,
+      "count": 100
+    }
+  },
+  "Random20States30SigmaE": {
+    "n": 20,
+    "SigmaE_param": 30,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 9706.19,
+      "variance": 942415.024141,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 30.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 18078.0,
+      "variance": 2890.909091,
+      "count": 100
+    },
+    "R": {
+      "mean": 582.6,
+      "variance": 3.212121,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 30.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random20States40SigmaE": {
+    "n": 20,
+    "SigmaE_param": 40,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 31253.64,
+      "variance": 10055463.909495,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 40.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 32082.8,
+      "variance": 5891.070707,
+      "count": 100
+    },
+    "R": {
+      "mean": 782.07,
+      "variance": 3.681919,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 40.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random40States10SigmaE": {
+    "n": 40,
+    "SigmaE_param": 10,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 904.35,
+      "variance": 7914.815657,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 10.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 4013.2,
+      "variance": 54.30303,
+      "count": 100
+    },
+    "R": {
+      "mean": 361.32,
+      "variance": 0.54303,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 10.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 1.99,
+      "variance": 0.01,
+      "count": 100
+    }
+  },
+  "Random40States20SigmaE": {
+    "n": 40,
+    "SigmaE_param": 20,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 7477.68,
+      "variance": 677759.351111,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 20.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 16034.8,
+      "variance": 659.555556,
+      "count": 100
+    },
+    "R": {
+      "mean": 761.74,
+      "variance": 1.648889,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 20.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 1.9,
+      "variance": 0.090909,
+      "count": 100
+    }
+  },
+  "Random40States30SigmaE": {
+    "n": 40,
+    "SigmaE_param": 30,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 39171.71,
+      "variance": 20232282.349394,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 30.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 36076.8,
+      "variance": 2969.454545,
+      "count": 100
+    },
+    "R": {
+      "mean": 1162.56,
+      "variance": 3.299394,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 30.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random40States40SigmaE": {
+    "n": 40,
+    "SigmaE_param": 40,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 132245.59,
+      "variance": 220475426.971616,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 40.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 64131.6,
+      "variance": 13229.737374,
+      "count": 100
+    },
+    "R": {
+      "mean": 1563.29,
+      "variance": 8.268586,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 40.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random80States10SigmaE": {
+    "n": 80,
+    "SigmaE_param": 10,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 3142.49,
+      "variance": 164215.888788,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 10.2,
+      "variance": 0.161616,
+      "count": 100
+    },
+    "output": {
+      "mean": 8176.73,
+      "variance": 107573.956667,
+      "count": 100
+    },
+    "R": {
+      "mean": 721.62,
+      "variance": 1.106667,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.2,
+      "variance": 0.161616,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 10.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.46,
+      "variance": 1.745859,
+      "count": 100
+    }
+  },
+  "Random80States20SigmaE": {
+    "n": 80,
+    "SigmaE_param": 20,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 32097.52,
+      "variance": 9868163.787475,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 20.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 32049.6,
+      "variance": 1409.939394,
+      "count": 100
+    },
+    "R": {
+      "mean": 1522.48,
+      "variance": 3.524848,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 20.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random80States30SigmaE": {
+    "n": 80,
+    "SigmaE_param": 30,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 170873.08,
+      "variance": 340227411.04404,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 30.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 72041.1,
+      "variance": 684.636364,
+      "count": 100
+    },
+    "R": {
+      "mean": 2321.37,
+      "variance": 0.760707,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 30.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  },
+  "Random80States40SigmaE": {
+    "n": 80,
+    "SigmaE_param": 40,
+    "generated_benchmark_count": 10,
+    "run_time": {
+      "mean": 596664.55,
+      "variance": 2978529268.108584,
+      "count": 100
+    },
+    "equiv": {
+      "mean": 40.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "output": {
+      "mean": 128081.2,
+      "variance": 5283.393939,
+      "count": 100
+    },
+    "R": {
+      "mean": 3122.03,
+      "variance": 3.302121,
+      "count": 100
+    },
+    "E": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "SigmaE": {
+      "mean": 40.0,
+      "variance": 0.0,
+      "count": 100
+    },
+    "m": {
+      "mean": 2.0,
+      "variance": 0.0,
+      "count": 100
+    }
+  }
+}
